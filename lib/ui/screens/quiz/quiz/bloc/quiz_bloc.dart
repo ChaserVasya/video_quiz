@@ -48,7 +48,6 @@ class QuizBloc extends SafeBloc<QuizEvent, QuizState> {
       if (state.answered.contains(q)) return false;
       if (_questionsInProcess.contains(q)) return false;
       final distance = (q.timestamp - event.pos).abs();
-      print(distance.inMilliseconds);
       if (distance > triggerDistance) return false;
       return true;
     });

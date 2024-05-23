@@ -15,7 +15,7 @@ extension NavigatorExtension on BuildContext {
 
 extension SeparateExtension<T> on List<T> {
   List<T> separateByIndexed<S extends T>(S Function(int) separatorBuilder) {
-    if (this.isEmpty) return this;
+    if (isEmpty) return this;
     final separatedListLength = 2 * length - 1;
     final separatedList =
         List<T?>.filled(separatedListLength, null, growable: true);
@@ -50,5 +50,5 @@ extension SeparateExtension<T> on List<T> {
 
 extension SeparateExtensionIterable<T> on Iterable<T> {
   List<T> separateBy<S extends T>(S separator) =>
-      this.toList().separateBy(separator);
+      toList().separateBy(separator);
 }
